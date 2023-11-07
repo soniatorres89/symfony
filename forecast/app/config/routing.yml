@@ -1,0 +1,45 @@
+forecast_simple:
+    path: /forecast/index
+    defaults: {_controller: AppBundle:Forecast:index}
+
+forecast_param:
+    path: '/forecast/{weather}'
+    defaults: {_controller: AppBundle:Forecast:indexParam, weather: nuboso}
+
+forecast_2_param:
+    path: "/forecast/{weather}/{temperature}"
+    defaults: {_controller: AppBundle:Forecast:index2Param, weather: cloudy, temperature: 15}
+
+forecast_request_param:
+    path: "/forecast/indexRequest/{weather}/{temperature}"
+    defaults: {_controller:AppBundle:Forecast:indexRequest, weather:cloudy, temperature:15}
+
+redirect_index:
+    path: /redirect/index
+    defaults: {_controller: AppBundle:Redirect:Index}
+
+redirect_interna_index:
+    path: /redirectinterna/index
+    defaults: {_controller: AppBundle:Redirect:internalRedirect}
+
+redirect_permanente:
+    path: /redirectpermanent/index
+    defaults: {_controller: AppBundle:Redirect:internalRedirectPermanent}
+
+redirect_externa:
+    path: /redirectexterna/index
+    defaults: {_controller: AppBundle:Redirect:externalRedirect}
+
+get_temp:
+    path: /temperature/{id}
+    defaults: {_controller: AppBundle:Temperature:get}
+    requirements:
+        id: \d+
+
+check_temp:
+    path: /temperature/check
+    defaults: {_controller: AppBundle:Temperature:check}
+
+getall_temp:
+    path: /temperature/getall
+    defaults: {_controller: AppBundle:Temperature:getAll}
