@@ -1,10 +1,10 @@
 forecast_simple:
-    path: /forecast/index
+    path: /forecast/
     defaults: {_controller: AppBundle:Forecast:index}
 
 forecast_param:
     path: '/forecast/{weather}'
-    defaults: {_controller: AppBundle:Forecast:indexParam, weather: nuboso}
+    defaults: {_controller: AppBundle:Forecast:meLoInvento, weather: nuboso}
 
 forecast_2_param:
     path: "/forecast/{weather}/{temperature}"

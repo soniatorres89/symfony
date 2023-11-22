@@ -1,0 +1,12 @@
+
+letras:
+    path: /cursiva3
+    defaults: {_controller: AppBundle:Empresa:sonia}
+
+letras2:
+    path: /cursiva2
+    defaults: {_controller: AppBundle:Empresa:yeisson}
+
+cursiva:
+    path: /cursiva/{algo}
+    defaults: {_controller: AppBundle:Greet:cursiva}

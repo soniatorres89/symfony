@@ -1,0 +1,20 @@
+suma:
+    path: /suma/{numero1}/{numero2}
+    defaults: {_controller: AppBundle:Calculator:suma, numero1: 1, numero2: 1}
+
+resta:
+    path: /resta/{numero1}/{numero2}
+    defaults: {_controller: AppBundle:Calculator:resta, numero1: 4, numero2: 5}
+
+multiplicacion:
+    path: /multiplicacion/{numero1}/{numero2}
+    defaults: {_controller: AppBundle:Calculator:multiplicacion, numero1: 1, numero2: 1}
+
+division:
+    path: /divi/{numero1}/{numero2}
+    defaults: {_controller:AppBundle:Calculator:division, numero1: 4, numero2: 2}
+
+# Aqui probamos las excepciones
+error:
+    path: /error
+    defaults: {_controller:AppBundle:Calculator:probarExepcion}

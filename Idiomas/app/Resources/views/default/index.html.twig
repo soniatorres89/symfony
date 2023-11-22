@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Default Title{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+        {{ app.session.get('username') }}
+
+        {% if app.request.attributes.get('_route') == 'app_network_signin' %}
+            {# Contenido para la acción signinAction #}
+            <h1>{{ message }}</h1>
+        {% elseif app.request.attributes.get('_route') == 'app_network_lenguaje' %}
+            {# Contenido para la acción lenguajeAction #}
+            <h1>{{ 'Locale: ' ~ locale }}</h1>
+        {% elseif app.request.attributes.get('_route') == 'app_network_profile' %}
+            {# Contenido para la acción profileAction #}
+            {% if username is defined %}
+                <h1>{{ 'Welcome ' ~ username ~ '!'|trans({}, 'messages', locale) }}</h1>
+            {% else %}
+                <h1>{{ 'No user logged in'|trans({}, 'messages', locale) }}</h1>
+            {% endif %}
+        {% endif %}
+    {% endblock %}
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+
+
+login:
+    path:     /login/{user}/{password}
+    defaults: { _controller: "AppBundle:Sesion:login" }
+
+login_incorrecto:
+    path:     /login/incorrecto
+    defaults: { _controller: "AppBundle:Login:loginIncorrecto" }
+
+correcto:
+    path:     /login/correcto
+    defaults: { _controller: "AppBundle:Login:correcto" }
+

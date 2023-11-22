@@ -1,0 +1,7 @@
+home:
+    path: /operaciones
+    defaults: {_controller:AppBundle:Matematica:index }
+
+operaciones:
+    path: /operar/{numero1}/{numero2}/
+    defaults: {_controller:AppBundle:Matematica:operar }

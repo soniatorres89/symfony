@@ -1,0 +1,19 @@
+
+app_network_signin:
+    path: /signin/{name}
+    defaults: { _controller: AppBundle:Network:signin, name: anonimo }
+    requirements:
+        # Al poner esto Symfony no encontraría la ruta para /signin/pepe2. 
+        # El control se estaría haciendo desde este punto
+        name: '[a-zA-Z]+' 
+
+app_network_lenguaje:
+    path: /{locale}
+    defaults: { _controller: AppBundle:Network:lenguaje, locale: es }
+    requirements:
+        locale: es|en|fr
+
+app_network_profile:
+    path: /profile
+    defaults: { _controller: AppBundle:Network:profile }
+
